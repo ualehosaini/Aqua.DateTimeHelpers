@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "others", "others", "{85A275
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aqua.DateTimeHelpers", "src\Aqua.DateTimeHelpers\Aqua.DateTimeHelpers.csproj", "{C0CA9359-DA8C-4C7D-B8CA-EB9D9306C20D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aqua.DateTimeHelpers.Tests", "tests\Aqua.DateTimeHelpers.Tests\Aqua.DateTimeHelpers.Tests.csproj", "{44D4063B-3199-418D-BA58-63F0529196DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,12 +23,17 @@ Global
 		{C0CA9359-DA8C-4C7D-B8CA-EB9D9306C20D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0CA9359-DA8C-4C7D-B8CA-EB9D9306C20D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0CA9359-DA8C-4C7D-B8CA-EB9D9306C20D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44D4063B-3199-418D-BA58-63F0529196DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44D4063B-3199-418D-BA58-63F0529196DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44D4063B-3199-418D-BA58-63F0529196DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44D4063B-3199-418D-BA58-63F0529196DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C0CA9359-DA8C-4C7D-B8CA-EB9D9306C20D} = {032091C9-D941-40FB-A7EA-989DC013BD40}
+		{44D4063B-3199-418D-BA58-63F0529196DF} = {53CF0B62-009E-4092-83D0-410030EFD940}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2753340F-9747-4E29-900C-EEBC06263C44}
