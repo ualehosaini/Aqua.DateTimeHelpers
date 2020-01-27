@@ -12,5 +12,17 @@ namespace Aqua.DateTimeHelpers.Tests
         {
             Assert.Equal(expected, DateTimeHelpers.IsValidDate(year, month, day));
         }
+
+        [Theory]
+        [InlineData(true, 23, 30)]
+        [InlineData(true, 23, 30, 10)]
+        [InlineData(false, 25, 30, 10)]
+        [InlineData(false, 23, 65, 10)]
+        [InlineData(false, 23, 30, 65)]
+        public void IsValidTime_Valid(bool expected, int hour, int minute, int second = 0)
+        {
+            Assert.Equal(expected, DateTimeHelpers.IsValidTime(hour, minute, second));
+        }
+
     }
 }

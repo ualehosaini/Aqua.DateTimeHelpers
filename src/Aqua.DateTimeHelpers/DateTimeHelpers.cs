@@ -21,5 +21,23 @@ namespace Aqua.DateTimeHelpers
                 day >= 1 &&
                 DateTime.DaysInMonth(year, month) >= day;
         }
+
+        /// <summary>
+        /// Check the combination of Hour, Minute, and Second is a Valid Time
+        /// </summary>
+        /// <param name="hour"></param>
+        /// <param name="minute"></param>
+        /// <param name="second"></param>
+        /// <returns></returns>
+        public static bool IsValidTime(int hour, int minute, int second = 0)
+        {
+            return
+                hour >= 0 &&
+                hour <= 23 &&
+                minute >= 0 &&
+                minute <= 59 &&
+                second >= 0 &&
+                second <= 59;
+        }
     }
 }
