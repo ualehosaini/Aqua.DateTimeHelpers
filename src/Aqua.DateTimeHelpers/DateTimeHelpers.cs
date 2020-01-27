@@ -39,5 +39,23 @@ namespace Aqua.DateTimeHelpers
                 second >= 0 &&
                 second <= 59;
         }
+
+        /// <summary>
+        /// Check the combination of Year, Month, Day, Hour, Minute, and Second is a Valid DateTime
+        /// </summary>
+        /// <param name="year"></param>
+        /// <param name="month"></param>
+        /// <param name="day"></param>
+        /// <param name="hour"></param>
+        /// <param name="minute"></param>
+        /// <param name="second"></param>
+        /// <returns></returns>
+        public static bool IsValidDateTime(int year, int month, int day, int hour, int minute, int second = 0)
+        {
+            return IsValidDate(year, month, day) &&
+                   IsValidTime(hour, minute, second);
+        }
+
+
     }
 }
