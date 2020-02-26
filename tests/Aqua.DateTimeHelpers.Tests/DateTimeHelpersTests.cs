@@ -1,3 +1,4 @@
+using System;
 using Xunit;
 
 namespace Aqua.DateTimeHelpers.Tests
@@ -33,6 +34,19 @@ namespace Aqua.DateTimeHelpers.Tests
         public void IsValidDateTime_Valid(bool expected, int year, int month, int day, int hour, int minute, int second = 0)
         {
             Assert.Equal(expected, DateTimeHelpers.IsValidDateTime(year, month, day, hour, minute, second));
+        }
+
+        [Theory]
+        [InlineData(0, 1970, 1, 1, 0, 0, 0)]
+        [InlineData(86399, 1970, 1, 1, 23, 59, 59)]
+        [InlineData(1444471810, 2015, 10, 10, 10, 10, 10)]
+        [InlineData(1433592775, 2015, 6, 6, 12, 12, 55)]
+        public void UnixTimeStampToDateTime_Valid(long input, int y, int m, int d, int h, int mnt, int s)
+        {
+            DateTime mid = new DateTime(y, m, d, h, mnt, s, DateTimeKind.Utc);
+            DateTime expected = new DateTime(mid.ToLocalTime().Ticks);
+
+            Assert.Equal(expected, DateTimeHelpers.UnixTimeStampToDateTime(input));
         }
 
     }

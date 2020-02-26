@@ -4,6 +4,8 @@ namespace Aqua.DateTimeHelpers
 {
     public class DateTimeHelpers
     {
+        private static readonly DateTime _epochDateTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
         /// <summary>
         /// Check the combination of Year, Month, and Day is a Valid Date
         /// </summary>
@@ -56,6 +58,15 @@ namespace Aqua.DateTimeHelpers
                    IsValidTime(hour, minute, second);
         }
 
-
+        /// <summary>
+        /// To Convert Unix 
+        /// Time Stamp To DateTime
+        /// </summary>
+        /// <param name="unixTimeStamp"></param>
+        /// <returns></returns>
+        public static DateTime UnixTimeStampToDateTime(double unixTimeStamp)
+        {
+            return new DateTime(_epochDateTime.AddSeconds(unixTimeStamp).ToLocalTime().Ticks);
+        }
     }
 }
