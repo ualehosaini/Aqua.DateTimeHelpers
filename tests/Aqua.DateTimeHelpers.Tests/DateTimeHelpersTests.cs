@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Xunit;
 
 namespace Aqua.DateTimeHelpers.Tests
@@ -73,5 +74,19 @@ namespace Aqua.DateTimeHelpers.Tests
 
             Assert.Equal(expected, DateTimeHelpers.DateTimeToUnixTimeStamp(value));
         }
+
+        [Theory]
+        [MemberData(nameof(IsBetweenData))]
+        public void IsBetween_Valid(bool expected, DateTime input, DateTime rangeBegining, DateTime rangeEnd)
+        {
+            Assert.Equal(expected, input.IsBetween(rangeBegining, rangeEnd));
+        }
+
+        public static IEnumerable<object[]> IsBetweenData =>
+            new List<object[]>
+                {
+                    new object[]{true, new DateTime(2019, 5, 5), new DateTime(2019, 5, 1), new DateTime(2019, 12, 20)},
+                    new object[]{false, new DateTime(2019, 5, 5), new DateTime(2019, 5, 6), new DateTime(2019, 12, 20)}
+                };
     }
 }

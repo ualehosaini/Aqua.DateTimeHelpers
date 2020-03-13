@@ -2,7 +2,7 @@
 
 namespace Aqua.DateTimeHelpers
 {
-    public class DateTimeHelpers
+    public static class DateTimeHelpers
     {
         private static readonly DateTime _epochDateTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         private static readonly long _epochTicks = 621355968000000000L;
@@ -90,6 +90,17 @@ namespace Aqua.DateTimeHelpers
             return (dateTime.ToUniversalTime().Ticks - _epochTicks) / TimeSpan.TicksPerSecond;
         }
 
-
+        /// <summary>
+        /// Check the input if it is within a range of DateTime
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="rangeBegining"></param>
+        /// <param name="rangeEnd"></param>
+        /// <returns></returns>
+        public static bool IsBetween(this DateTime input, DateTime rangeBegining, DateTime rangeEnd)
+        {
+            return input.Ticks >= rangeBegining.Ticks &&
+                   input.Ticks < rangeEnd.Ticks;
+        }
     }
 }
