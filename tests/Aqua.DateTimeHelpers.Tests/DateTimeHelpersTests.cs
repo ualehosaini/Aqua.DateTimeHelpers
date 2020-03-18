@@ -88,5 +88,11 @@ namespace Aqua.DateTimeHelpers.Tests
                     new object[]{true, new DateTime(2019, 5, 5), new DateTime(2019, 5, 1), new DateTime(2019, 12, 20)},
                     new object[]{false, new DateTime(2019, 5, 5), new DateTime(2019, 5, 6), new DateTime(2019, 12, 20)}
                 };
+
+        [Fact]
+        public void GetMinDate_Valid()
+        {
+            Assert.Equal(new DateTime(0001, 1, 1), DateTimeHelpers.GetMinDate());
+        }
     }
 }

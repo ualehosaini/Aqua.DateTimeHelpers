@@ -102,5 +102,15 @@ namespace Aqua.DateTimeHelpers
             return input.Ticks >= rangeBegining.Ticks &&
                    input.Ticks < rangeEnd.Ticks;
         }
+
+        /// <summary>
+        /// Returns the DateTime.MinValue
+        /// </summary>
+        /// <returns></returns>
+        public static DateTime GetMinDate()
+        {
+            return DateTime.MinValue;
+        }
+
     }
 }
