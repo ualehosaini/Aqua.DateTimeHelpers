@@ -94,5 +94,14 @@ namespace Aqua.DateTimeHelpers.Tests
         {
             Assert.Equal(new DateTime(0001, 1, 1), DateTimeHelpers.GetMinDate());
         }
+
+        [Fact]
+        public void IgnoreTimeSpan_Valid()
+        {
+            Assert.Equal(new DateTime(9999, 12, 31, 23, 59, 59), DateTimeHelpers.IgnoreTimeSpan(DateTime.MaxValue, TimeSpan.FromMilliseconds(1000)));
+            Assert.Equal(new DateTime(9999, 12, 31, 23, 59, 0), DateTimeHelpers.IgnoreTimeSpan(DateTime.MaxValue, TimeSpan.FromSeconds(60)));
+            Assert.Equal(new DateTime(9999, 12, 31, 23, 0, 0), DateTimeHelpers.IgnoreTimeSpan(DateTime.MaxValue, TimeSpan.FromMinutes(60)));
+            Assert.Equal(new DateTime(9999, 12, 31, 0, 0, 0), DateTimeHelpers.IgnoreTimeSpan(DateTime.MaxValue, TimeSpan.FromHours(24)));
+        }
     }
 }

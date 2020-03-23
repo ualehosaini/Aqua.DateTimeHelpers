@@ -112,5 +112,18 @@ namespace Aqua.DateTimeHelpers
             return DateTime.MinValue;
         }
 
+        /// <summary>
+        /// Ignore Specific DateTime Part
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <param name="timeSpan"></param>
+        /// <returns></returns>
+        public static DateTime IgnoreTimeSpan(this DateTime dateTime, TimeSpan timeSpan)
+        {
+            if (timeSpan == TimeSpan.Zero)
+                return dateTime;
+
+            return dateTime.AddTicks(-(dateTime.Ticks % timeSpan.Ticks));
+        }
     }
 }
