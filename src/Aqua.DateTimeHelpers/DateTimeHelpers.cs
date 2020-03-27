@@ -125,5 +125,16 @@ namespace Aqua.DateTimeHelpers
 
             return dateTime.AddTicks(-(dateTime.Ticks % timeSpan.Ticks));
         }
+
+        /// <summary>
+        /// Ignore the Milliseconds Part
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static DateTime IgnoreMilliseconds(this DateTime dateTime)
+        {
+            return dateTime.IgnoreTimeSpan(TimeSpan.FromMilliseconds(1000));
+        }
+
     }
 }
