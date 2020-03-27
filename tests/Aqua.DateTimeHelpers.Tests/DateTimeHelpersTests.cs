@@ -109,5 +109,11 @@ namespace Aqua.DateTimeHelpers.Tests
         {
             Assert.Equal(new DateTime(9999, 12, 31, 23, 59, 59), DateTime.MaxValue.IgnoreMilliseconds());
         }
+
+        [Fact]
+        public void IgnoreSeconds_Valid()
+        {
+            Assert.Equal(new DateTime(9999, 12, 31, 23, 59, 0), DateTime.MaxValue.IgnoreSeconds());
+        }
     }
 }
