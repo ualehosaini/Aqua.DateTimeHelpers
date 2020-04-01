@@ -156,5 +156,15 @@ namespace Aqua.DateTimeHelpers
             return dateTime.IgnoreTimeSpan(TimeSpan.FromMinutes(60));
         }
 
+        /// <summary>
+        /// Ignore the Hours Part
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static DateTime IgnoreHours(this DateTime dateTime)
+        {
+            return dateTime.IgnoreTimeSpan(TimeSpan.FromHours(24));
+        }
+
     }
 }
