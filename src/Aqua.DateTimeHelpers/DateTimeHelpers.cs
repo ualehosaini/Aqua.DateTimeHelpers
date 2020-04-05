@@ -176,5 +176,15 @@ namespace Aqua.DateTimeHelpers
             return dateTime.DayOfWeek == DayOfWeek.Sunday;
         }
 
+        /// <summary>
+        /// Is The Date is Moday?
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static bool IsMonday(this DateTime dateTime)
+        {
+            return dateTime.DayOfWeek == DayOfWeek.Monday;
+        }
+
     }
 }
