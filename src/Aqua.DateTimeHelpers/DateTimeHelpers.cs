@@ -166,5 +166,15 @@ namespace Aqua.DateTimeHelpers
             return dateTime.IgnoreTimeSpan(TimeSpan.FromHours(24));
         }
 
+        /// <summary>
+        /// Is The Date is Sunday?
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static bool IsSunday(this DateTime dateTime)
+        {
+            return dateTime.DayOfWeek == DayOfWeek.Sunday;
+        }
+
     }
 }
