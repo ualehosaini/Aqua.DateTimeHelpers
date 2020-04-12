@@ -236,5 +236,24 @@ namespace Aqua.DateTimeHelpers
             return dateTime.DayOfWeek == DayOfWeek.Saturday;
         }
 
+        /// <summary>
+        /// Last WeekDay in a Year / Month
+        /// </summary>
+        /// <param name="year"></param>
+        /// <param name="month"></param>
+        /// <param name="day"></param>
+        /// <returns></returns>
+        public static DateTime GetLastWeekdayOfMonth(int year, int month, DayOfWeek day)
+        {
+            DateTime lastDayOfTheMonth = new DateTime(year, month, 1)
+                                        .AddMonths(1)
+                                        .AddDays(-1);
+            int searchDay = (int)day;
+            int lastDay = (int)lastDayOfTheMonth.DayOfWeek;
+            return lastDayOfTheMonth.AddDays(lastDay >= searchDay
+                                                ? searchDay - lastDay
+                                                : searchDay - lastDay - 7);
+        }
+
     }
 }

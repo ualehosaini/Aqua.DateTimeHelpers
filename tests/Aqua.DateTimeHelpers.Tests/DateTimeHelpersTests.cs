@@ -190,5 +190,19 @@ namespace Aqua.DateTimeHelpers.Tests
         {
             Assert.Equal(expected, DateTimeHelpers.IsSaturday(new DateTime(year, month, day)));
         }
+
+        [Theory]
+        [MemberData(nameof(GetLastWeekdayOfMonthData))]
+        public void GetLastWeekdayOfMonth_Valid(DateTime expected, int year, int month, DayOfWeek day)
+        {
+            Assert.Equal(expected, DateTimeHelpers.GetLastWeekdayOfMonth(year, month, day));
+        }
+
+        public static IEnumerable<object[]> GetLastWeekdayOfMonthData =>
+            new List<object[]>
+            {
+                    new object[]{new DateTime(2019, 8, 25), 2019, 8, DayOfWeek.Sunday},
+                    new object[]{new DateTime(2019, 8, 30), 2019, 8, DayOfWeek.Friday},
+            };
     }
 }
