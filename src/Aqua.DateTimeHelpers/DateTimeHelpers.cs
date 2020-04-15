@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Aqua.DateTimeHelpers
 {
@@ -253,6 +254,27 @@ namespace Aqua.DateTimeHelpers
             return lastDayOfTheMonth.AddDays(lastDay >= searchDay
                                                 ? searchDay - lastDay
                                                 : searchDay - lastDay - 7);
+        }
+
+        /// <summary>
+        /// Generate Date List between two dates
+        /// </summary>
+        /// <param name="fisrtDate"></param>
+        /// <param name="lastDate"></param>
+        /// <returns></returns>
+        public static List<DateTime> GenerateDateList(DateTime fisrtDate, DateTime lastDate)
+        {
+            if (fisrtDate > lastDate)
+                throw new ArgumentException("Incorrect last date " + lastDate);
+
+            List<DateTime> result = new List<DateTime>();
+            for (DateTime day = fisrtDate.Date; day.Date <= lastDate.Date; day = day.AddDays(1))
+            {
+                result.Add(day);
+            }
+
+            return result;
+
         }
 
     }

@@ -204,5 +204,24 @@ namespace Aqua.DateTimeHelpers.Tests
                     new object[]{new DateTime(2019, 8, 25), 2019, 8, DayOfWeek.Sunday},
                     new object[]{new DateTime(2019, 8, 30), 2019, 8, DayOfWeek.Friday},
             };
+
+        [Theory]
+        [MemberData(nameof(GenerateDateListData))]
+        public void GenerateDateList_Valid(IEnumerable<DateTime> expected, DateTime fisrtDate, DateTime lastDate)
+        {
+            Assert.Equal(expected, DateTimeHelpers.GenerateDateList(fisrtDate, lastDate));
+        }
+
+        public static IEnumerable<object[]> GenerateDateListData =>
+            new List<object[]>
+                {
+                    // DaysOfWeek Int Sunday = 0, Monday = 1 ... Saturday = 6
+                    new object[]{new List<DateTime> { new DateTime (2019, 1, 2) , new DateTime (2019, 1, 3) , new DateTime (2019, 1, 4), new DateTime(2019, 1, 5) } ,
+                                 new DateTime (2019, 1, 2), new DateTime (2019, 1, 5),
+                    },
+                    new object[]{new List<DateTime> { new DateTime(2019, 5, 27), new DateTime (2019, 5, 28) , new DateTime (2019, 5, 29) , new DateTime (2019, 5, 30) , new DateTime (2019, 5, 31), new DateTime(2019, 6, 1), new DateTime(2019, 6, 2) } ,
+                                 new DateTime (2019, 5, 27), new DateTime (2019, 6, 2),
+                    }
+                };
     }
 }
