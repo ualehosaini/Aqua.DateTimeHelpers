@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Threading;
 
 namespace Aqua.DateTimeHelpers
 {
@@ -276,6 +278,25 @@ namespace Aqua.DateTimeHelpers
             return result;
 
         }
+
+        /// <summary>
+        /// Return the Date of the first day of week of specific Date
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static DateTime GetFirstDayOfWeek(DateTime dateTime)
+        {
+            CultureInfo culture = Thread.CurrentThread.CurrentCulture;
+            int diff = dateTime.DayOfWeek - culture.DateTimeFormat.FirstDayOfWeek;
+
+            if (diff < 0)
+            {
+                diff += 7;
+            }
+
+            return dateTime.AddDays(-diff).Date;
+        }
+
 
     }
 }

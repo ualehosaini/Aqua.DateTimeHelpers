@@ -223,5 +223,19 @@ namespace Aqua.DateTimeHelpers.Tests
                                  new DateTime (2019, 5, 27), new DateTime (2019, 6, 2),
                     }
                 };
+
+        [Theory]
+        [MemberData(nameof(GetFirstDayOfWeekData))]
+        public void GetFirstDayOfWeek_Valid(DateTime expected, DateTime dateTime)
+        {
+            Assert.Equal(expected, DateTimeHelpers.GetFirstDayOfWeek(dateTime));
+        }
+
+        public static IEnumerable<object[]> GetFirstDayOfWeekData =>
+            new List<object[]>
+            {
+                    new object[]{new DateTime(2019, 7, 29), new DateTime(2019, 8, 4)},
+                    new object[]{new DateTime(2019, 7, 29), new DateTime(2019, 8, 2)},
+            };
     }
 }
