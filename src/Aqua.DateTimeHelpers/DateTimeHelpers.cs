@@ -297,6 +297,20 @@ namespace Aqua.DateTimeHelpers
             return dateTime.AddDays(-diff).Date;
         }
 
+        /// <summary>
+        /// Return the Year's quarter number of specific date
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static int QuarterOfYear(this DateTime dateTime)
+        {
+            return dateTime.Month >= 1 && dateTime.Month <= 3
+                ? 1
+                : dateTime.Month >= 4 && dateTime.Month <= 6
+                    ? 2
+                    : dateTime.Month >= 7 && dateTime.Month <= 9
+                        ? 3 : 4;
+        }
 
     }
 }

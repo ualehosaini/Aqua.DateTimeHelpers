@@ -237,5 +237,14 @@ namespace Aqua.DateTimeHelpers.Tests
                     new object[]{new DateTime(2019, 7, 29), new DateTime(2019, 8, 4)},
                     new object[]{new DateTime(2019, 7, 29), new DateTime(2019, 8, 2)},
             };
+
+        [Fact]
+        public void QuarterOfYear_Valid()
+        {
+            Assert.Equal(1, (new DateTime(2019, 2, 25)).QuarterOfYear());
+            Assert.Equal(2, (new DateTime(2019, 6, 20)).QuarterOfYear());
+            Assert.Equal(3, (new DateTime(2019, 7, 25)).QuarterOfYear());
+            Assert.Equal(4, (new DateTime(2019, 10, 25)).QuarterOfYear());
+        }
     }
 }
