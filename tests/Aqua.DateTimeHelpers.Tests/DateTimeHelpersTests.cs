@@ -246,5 +246,13 @@ namespace Aqua.DateTimeHelpers.Tests
             Assert.Equal(3, (new DateTime(2019, 7, 25)).QuarterOfYear());
             Assert.Equal(4, (new DateTime(2019, 10, 25)).QuarterOfYear());
         }
+
+        [Fact]
+        public void Midnight_Valid()
+        {
+            Assert.Equal(new DateTime(2019, 12, 25), (new DateTime(2019, 12, 25, 1, 0, 0)).Midnight());
+            Assert.Equal(new DateTime(2019, 12, 25), (new DateTime(2019, 12, 25, 1, 10, 0)).Midnight());
+            Assert.Equal(new DateTime(2019, 12, 25), (new DateTime(2019, 12, 25, 1, 10, 55)).Midnight());
+        }
     }
 }

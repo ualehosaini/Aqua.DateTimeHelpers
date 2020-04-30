@@ -312,5 +312,15 @@ namespace Aqua.DateTimeHelpers
                         ? 3 : 4;
         }
 
+        /// <summary>
+        /// Returns Midnight of a DateTime
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static DateTime Midnight(this DateTime dateTime)
+        {
+            return dateTime.Date;
+        }
+
     }
 }
