@@ -322,5 +322,19 @@ namespace Aqua.DateTimeHelpers
             return dateTime.Date;
         }
 
+        /// <summary>
+        /// Returns the age in years
+        /// </summary>
+        /// <param name="referenceDate"></param>
+        /// <param name="today"></param>
+        /// <returns></returns>
+        public static int AgeCalenderYears(DateTime referenceDate, DateTime today)
+        {
+            if (referenceDate > today)
+                throw new ArgumentOutOfRangeException(nameof(referenceDate));
+
+            return today.Year - referenceDate.Year;
+        }
+
     }
 }

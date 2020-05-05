@@ -254,5 +254,12 @@ namespace Aqua.DateTimeHelpers.Tests
             Assert.Equal(new DateTime(2019, 12, 25), (new DateTime(2019, 12, 25, 1, 10, 0)).Midnight());
             Assert.Equal(new DateTime(2019, 12, 25), (new DateTime(2019, 12, 25, 1, 10, 55)).Midnight());
         }
+
+        [Fact]
+        public void AgeYears_Valid()
+        {
+            Assert.Equal(40, DateTimeHelpers.AgeCalenderYears(new DateTime(1980, 8, 10, 13, 0, 0), new DateTime(2020, 5, 5)));
+        }
+
     }
 }
