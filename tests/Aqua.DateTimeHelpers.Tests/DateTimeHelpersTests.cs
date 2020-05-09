@@ -270,5 +270,7 @@ namespace Aqua.DateTimeHelpers.Tests
             Assert.Equal(new DateTime(2019, 12, 25, 1, 10, 55), (new DateTime(2019, 12, 25)).SetTime(1, 10, 55));
         }
 
+
+
     }
 }
