@@ -336,5 +336,21 @@ namespace Aqua.DateTimeHelpers
             return today.Year - referenceDate.Year;
         }
 
+        /// <summary>
+        /// Set a Time to a DateTime
+        /// </summary>
+        /// <param name="date"></param>
+        /// <param name="hour"></param>
+        /// <param name="minute"></param>
+        /// <param name="second"></param>
+        /// <returns></returns>
+        public static DateTime SetTime(this DateTime date, int hour = 0, int minute = 0, int second = 0)
+        {
+            if (!IsValidTime(hour, minute, second))
+                throw new ArgumentOutOfRangeException("Time values are not within ccepted range");
+            return new DateTime(date.Year, date.Month, date.Day, hour, minute, second);
+        }
+
+
     }
 }
