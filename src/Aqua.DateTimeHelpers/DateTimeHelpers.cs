@@ -351,6 +351,16 @@ namespace Aqua.DateTimeHelpers
             return new DateTime(date.Year, date.Month, date.Day, hour, minute, second);
         }
 
+        /// <summary>
+        /// Return the Date of the last day of week of specific Date
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static DateTime GetLastDayOfWeek(DateTime dateTime)
+        {
+            return GetFirstDayOfWeek(dateTime).AddDays(6);
+        }
+
 
 
 

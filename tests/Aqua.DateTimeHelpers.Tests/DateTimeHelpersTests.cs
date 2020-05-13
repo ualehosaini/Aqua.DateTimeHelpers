@@ -270,6 +270,20 @@ namespace Aqua.DateTimeHelpers.Tests
             Assert.Equal(new DateTime(2019, 12, 25, 1, 10, 55), (new DateTime(2019, 12, 25)).SetTime(1, 10, 55));
         }
 
+        [Theory]
+        [MemberData(nameof(GetLastDayOfWeekData))]
+        public void GetLastDayOfWeek_Valid(DateTime expected, DateTime dateTime)
+        {
+            Assert.Equal(expected, DateTimeHelpers.GetLastDayOfWeek(dateTime));
+        }
+
+        public static IEnumerable<object[]> GetLastDayOfWeekData =>
+            new List<object[]>
+            {
+                    new object[]{new DateTime(2019, 8, 4), new DateTime(2019, 8, 4)},
+                    new object[]{new DateTime(2019, 8, 4), new DateTime(2019, 8, 2)},
+            };
+
 
 
     }
