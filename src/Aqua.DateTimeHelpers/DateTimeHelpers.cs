@@ -361,6 +361,16 @@ namespace Aqua.DateTimeHelpers
             return GetFirstDayOfWeek(dateTime).AddDays(6);
         }
 
+        /// <summary>
+        /// Return the Date of the first day of next week of specific Date
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static DateTime GetFirstDayOfNextWeek(DateTime dateTime)
+        {
+            return GetFirstDayOfWeek(dateTime).AddDays(7);
+        }
+
 
 
 
