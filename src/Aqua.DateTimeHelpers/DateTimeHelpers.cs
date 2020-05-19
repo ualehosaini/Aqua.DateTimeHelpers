@@ -371,6 +371,16 @@ namespace Aqua.DateTimeHelpers
             return GetFirstDayOfWeek(dateTime).AddDays(7);
         }
 
+        /// <summary>
+        /// Return the Date of the same day of next month
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static DateTime NextMonthSameDay(this DateTime dateTime)
+        {
+            return dateTime.AddMonths(1);
+        }
+
 
 
 

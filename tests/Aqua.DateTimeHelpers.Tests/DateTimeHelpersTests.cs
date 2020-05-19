@@ -298,5 +298,12 @@ namespace Aqua.DateTimeHelpers.Tests
                     new object[]{new DateTime(2019, 8, 5), new DateTime(2019, 8, 2)},
             };
 
+        [Fact]
+        public void NextMonthSameDay_Valid()
+        {
+            Assert.Equal(new DateTime(2019, 8, 17), (new DateTime(2019, 7, 17)).NextMonthSameDay());
+            Assert.Equal(new DateTime(2019, 7, 3), (new DateTime(2019, 6, 3)).NextMonthSameDay());
+        }
+
     }
 }
