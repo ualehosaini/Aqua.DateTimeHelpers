@@ -381,6 +381,21 @@ namespace Aqua.DateTimeHelpers
             return dateTime.AddMonths(1);
         }
 
+        /// <summary>
+        /// Set a Day to a DateTime
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <param name="day"></param>
+        /// <returns></returns>
+        public static DateTime SetDay(this DateTime dateTime, int day)
+        {
+            if (!IsValidDate(dateTime.Year, dateTime.Month, day))
+                throw new ArgumentOutOfRangeException(nameof(day));
+
+            return dateTime.AddDays(-1 * dateTime.Day).AddDays(day);
+
+            //return new DateTime(dateTime.Year, dateTime.Month, day, dateTime.Hour, dateTime.Minute, dateTime.Second);
+        }
 
 
 
