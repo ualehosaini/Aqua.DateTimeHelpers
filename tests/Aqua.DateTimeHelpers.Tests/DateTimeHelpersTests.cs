@@ -314,6 +314,13 @@ namespace Aqua.DateTimeHelpers.Tests
             Assert.Equal(new DateTime(2019, 12, 20, 1, 10, 55), (new DateTime(2019, 12, 25, 1, 10, 55)).SetDay(20));
         }
 
-
+        [Fact]
+        public void NextYearSameDay_Valid()
+        {
+            Assert.Equal(new DateTime(2020, 12, 25), (new DateTime(2019, 12, 25)).NextYearSameDay());
+            Assert.Equal(new DateTime(2020, 12, 25, 1, 0, 0), (new DateTime(2019, 12, 25, 1, 0, 0)).NextYearSameDay());
+            Assert.Equal(new DateTime(2020, 12, 25, 1, 10, 0), (new DateTime(2019, 12, 25, 1, 10, 0)).NextYearSameDay());
+            Assert.Equal(new DateTime(2020, 12, 25, 1, 10, 55), (new DateTime(2019, 12, 25, 1, 10, 55)).NextYearSameDay());
+        }
     }
 }

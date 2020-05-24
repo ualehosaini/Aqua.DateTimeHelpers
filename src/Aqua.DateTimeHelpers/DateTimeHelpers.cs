@@ -397,6 +397,16 @@ namespace Aqua.DateTimeHelpers
             //return new DateTime(dateTime.Year, dateTime.Month, day, dateTime.Hour, dateTime.Minute, dateTime.Second);
         }
 
+        /// <summary>
+        /// Returns same DateTime as Next Year
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static DateTime NextYearSameDay(this DateTime dateTime)
+        {
+            return dateTime.AddYears(1);
+        }
+
 
 
     }
