@@ -407,6 +407,16 @@ namespace Aqua.DateTimeHelpers
             return dateTime.AddYears(1);
         }
 
+        /// <summary>
+        /// Returns Noon of a DateTime
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static DateTime Noon(this DateTime dateTime)
+        {
+            return dateTime.SetTime(12, 0, 0);
+        }
+
 
 
     }
