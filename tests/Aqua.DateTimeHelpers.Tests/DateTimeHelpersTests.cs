@@ -330,5 +330,13 @@ namespace Aqua.DateTimeHelpers.Tests
             Assert.Equal(new DateTime(2019, 12, 25, 12, 0, 0), (new DateTime(2019, 12, 25, 1, 10, 0)).Noon());
             Assert.Equal(new DateTime(2019, 12, 25, 12, 0, 0), (new DateTime(2019, 12, 25, 1, 10, 55)).Noon());
         }
+
+        [Fact]
+        public void IsDayAM_Valid()
+        {
+            Assert.True(new DateTime(2019, 12, 25, 1, 10, 50).IsDateAM());
+            Assert.False(new DateTime(2019, 12, 25, 15, 10, 50).IsDateAM());
+            Assert.True(new DateTime(2019, 12, 25, 10, 10, 55).IsDateAM());
+        }
     }
 }

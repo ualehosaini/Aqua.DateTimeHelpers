@@ -417,6 +417,16 @@ namespace Aqua.DateTimeHelpers
             return dateTime.SetTime(12, 0, 0);
         }
 
+        /// <summary>
+        /// Checks if The DateTime is an AM DateTime value
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static bool IsDateAM(this DateTime dateTime)
+        {
+            return dateTime >= dateTime.Midnight() && dateTime < dateTime.Noon();
+        }
+
 
 
     }
