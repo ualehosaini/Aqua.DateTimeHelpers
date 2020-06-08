@@ -338,5 +338,12 @@ namespace Aqua.DateTimeHelpers.Tests
             Assert.False(new DateTime(2019, 12, 25, 15, 10, 50).IsDateAM());
             Assert.True(new DateTime(2019, 12, 25, 10, 10, 55).IsDateAM());
         }
+
+        [Fact]
+        public void NextWeekSameDay_Valid()
+        {
+            Assert.Equal(new DateTime(2019, 7, 24), (new DateTime(2019, 7, 17)).NextWeekSameDay());
+            Assert.Equal(new DateTime(2019, 6, 10), (new DateTime(2019, 6, 3)).NextWeekSameDay());
+        }
     }
 }

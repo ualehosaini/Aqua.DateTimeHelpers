@@ -427,6 +427,15 @@ namespace Aqua.DateTimeHelpers
             return dateTime >= dateTime.Midnight() && dateTime < dateTime.Noon();
         }
 
+        /// <summary>
+        /// Return the Date of the same day of next week
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static DateTime NextWeekSameDay(this DateTime dateTime)
+        {
+            return dateTime.AddDays(7);
+        }
 
 
     }
