@@ -437,6 +437,21 @@ namespace Aqua.DateTimeHelpers
             return dateTime.AddDays(7);
         }
 
+        /// <summary>
+        /// Return the Year's week number of specific date
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static int WeekOfYear(this DateTime dateTime)
+        {
+            int day = (int)dateTime.DayOfWeek;
+            return CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(
+                 dateTime.AddDays(4 - (day == 0 ? 7 : day)),
+                 CalendarWeekRule.FirstFourDayWeek,
+                 DayOfWeek.Monday);
+        }
+
+
 
     }
 }

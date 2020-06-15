@@ -345,5 +345,13 @@ namespace Aqua.DateTimeHelpers.Tests
             Assert.Equal(new DateTime(2019, 7, 24), (new DateTime(2019, 7, 17)).NextWeekSameDay());
             Assert.Equal(new DateTime(2019, 6, 10), (new DateTime(2019, 6, 3)).NextWeekSameDay());
         }
+
+        [Fact]
+        public void WeekOfYear_Valid()
+        {
+            Assert.Equal(9, (new DateTime(2019, 2, 25)).WeekOfYear());
+            Assert.Equal(3, (new DateTime(2019, 1, 20)).WeekOfYear());
+            Assert.Equal(52, (new DateTime(2019, 12, 25)).WeekOfYear());
+        }
     }
 }
