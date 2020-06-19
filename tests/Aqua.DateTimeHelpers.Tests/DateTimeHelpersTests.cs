@@ -353,5 +353,14 @@ namespace Aqua.DateTimeHelpers.Tests
             Assert.Equal(3, (new DateTime(2019, 1, 20)).WeekOfYear());
             Assert.Equal(52, (new DateTime(2019, 12, 25)).WeekOfYear());
         }
+
+        [Fact]
+        public void SetMonth_Valid()
+        {
+            Assert.Equal(new DateTime(2019, 5, 25), (new DateTime(2019, 12, 25)).SetMonth(5));
+            Assert.Equal(new DateTime(2019, 5, 25, 1, 0, 0), (new DateTime(2019, 12, 25, 1, 0, 0)).SetMonth(5));
+            Assert.Equal(new DateTime(2019, 5, 25, 1, 10, 0), (new DateTime(2019, 12, 25, 1, 10, 0)).SetMonth(5));
+            Assert.Equal(new DateTime(2019, 5, 25, 1, 10, 55), (new DateTime(2019, 12, 25, 1, 10, 55)).SetMonth(5));
+        }
     }
 }

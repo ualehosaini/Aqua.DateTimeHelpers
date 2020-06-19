@@ -451,7 +451,19 @@ namespace Aqua.DateTimeHelpers
                  DayOfWeek.Monday);
         }
 
+        /// <summary>
+        /// Set a Month to a DateTime
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <param name="month"></param>
+        /// <returns></returns>
+        public static DateTime SetMonth(this DateTime dateTime, int month)
+        {
+            if (!IsValidDate(dateTime.Year, month, dateTime.Day))
+                throw new ArgumentOutOfRangeException("Either month value is not within the range or Month days became out of range");
 
+            return dateTime.AddMonths(-1 * dateTime.Month).AddMonths(month);
+        }
 
     }
 }
