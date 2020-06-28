@@ -370,5 +370,20 @@ namespace Aqua.DateTimeHelpers.Tests
             Assert.Equal(new DateTime(2019, 5, 27), (new DateTime(2019, 6, 3)).PreviousWeekSameDay());
         }
 
+        [Theory]
+        [MemberData(nameof(GetFirstWeekdayOfMonthData))]
+        public void GetFirstWeekdayOfMonth_Valid(DateTime expected, int year, int month, DayOfWeek day)
+        {
+            Assert.Equal(expected, DateTimeHelpers.GetFirstWeekdayOfMonth(year, month, day));
+        }
+
+        public static IEnumerable<object[]> GetFirstWeekdayOfMonthData =>
+            new List<object[]>
+            {
+                    new object[]{new DateTime(2019, 8, 4), 2019, 8, DayOfWeek.Sunday},
+                    new object[]{new DateTime(2019, 8, 2), 2019, 8, DayOfWeek.Friday},
+            };
+
+
     }
 }

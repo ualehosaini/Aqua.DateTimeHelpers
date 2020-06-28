@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Threading;
 
 namespace Aqua.DateTimeHelpers
@@ -475,6 +476,19 @@ namespace Aqua.DateTimeHelpers
             return dateTime.AddDays(-7);
         }
 
+        /// <summary>
+        /// First WeekDay in a Year / Month
+        /// </summary>
+        /// <param name="year"></param>
+        /// <param name="month"></param>
+        /// <param name="dayOfWeek"></param>
+        /// <returns></returns>
+        public static DateTime GetFirstWeekdayOfMonth(int year, int month, DayOfWeek dayOfWeek)
+        {
+            return Enumerable.Range(1, 7).
+                              Select(day => new DateTime(year, month, day)).
+                              First(dateTime => (dateTime.DayOfWeek == dayOfWeek));
+        }
 
     }
 }
