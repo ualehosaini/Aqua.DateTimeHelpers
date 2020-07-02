@@ -490,5 +490,14 @@ namespace Aqua.DateTimeHelpers
                               First(dateTime => (dateTime.DayOfWeek == dayOfWeek));
         }
 
+        /// <summary>
+        /// Returns same DateTime as Previous Year
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static DateTime PreviousYearSameDay(this DateTime dateTime)
+        {
+            return dateTime.AddYears(-1);
+        }
     }
 }

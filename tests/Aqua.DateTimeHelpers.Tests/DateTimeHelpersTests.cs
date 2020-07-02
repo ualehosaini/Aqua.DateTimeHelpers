@@ -384,6 +384,14 @@ namespace Aqua.DateTimeHelpers.Tests
                     new object[]{new DateTime(2019, 8, 2), 2019, 8, DayOfWeek.Friday},
             };
 
+        [Fact]
+        public void PreviousYearSameDay_Valid()
+        {
+            Assert.Equal(new DateTime(2018, 12, 25), (new DateTime(2019, 12, 25)).PreviousYearSameDay());
+            Assert.Equal(new DateTime(2018, 12, 25, 1, 0, 0), (new DateTime(2019, 12, 25, 1, 0, 0)).PreviousYearSameDay());
+            Assert.Equal(new DateTime(2018, 12, 25, 1, 10, 0), (new DateTime(2019, 12, 25, 1, 10, 0)).PreviousYearSameDay());
+            Assert.Equal(new DateTime(2018, 12, 25, 1, 10, 55), (new DateTime(2019, 12, 25, 1, 10, 55)).PreviousYearSameDay());
+        }
 
     }
 }
