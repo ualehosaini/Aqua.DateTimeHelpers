@@ -393,5 +393,10 @@ namespace Aqua.DateTimeHelpers.Tests
             Assert.Equal(new DateTime(2018, 12, 25, 1, 10, 55), (new DateTime(2019, 12, 25, 1, 10, 55)).PreviousYearSameDay());
         }
 
+        [Fact]
+        public void AgeMonths_Valid()
+        {
+            Assert.Equal(477, DateTimeHelpers.AgeMonths(new DateTime(1980, 8, 10, 13, 0, 0), new DateTime(2020, 5, 5)));
+        }
     }
 }

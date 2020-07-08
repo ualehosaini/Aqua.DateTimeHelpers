@@ -499,5 +499,22 @@ namespace Aqua.DateTimeHelpers
         {
             return dateTime.AddYears(-1);
         }
+
+
+        /// <summary>
+        /// Returns the age in years and months
+        /// </summary>
+        /// <param name="referenceDate"></param>
+        /// <param name="today"></param>
+        /// <returns></returns>
+        public static int AgeMonths(DateTime referenceDate, DateTime today)
+        {
+            if (referenceDate > today)
+                throw new ArgumentOutOfRangeException(nameof(referenceDate));
+
+            return (today.Year * 12 + today.Month) - (referenceDate.Year * 12 + referenceDate.Month);
+        }
+
+
     }
 }
