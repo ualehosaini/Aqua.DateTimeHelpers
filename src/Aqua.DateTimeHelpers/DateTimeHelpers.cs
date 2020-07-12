@@ -515,6 +515,17 @@ namespace Aqua.DateTimeHelpers
             return (today.Year * 12 + today.Month) - (referenceDate.Year * 12 + referenceDate.Month);
         }
 
+        /// <summary>
+        /// Return the Date of the last day of previous week of specific Date
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static DateTime GetLastDayOfPreviousWeek(DateTime dateTime)
+        {
+            return GetFirstDayOfWeek(dateTime).AddDays(-1);
+        }
+
+
 
     }
 }

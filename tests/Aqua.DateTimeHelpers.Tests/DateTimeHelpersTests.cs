@@ -398,5 +398,19 @@ namespace Aqua.DateTimeHelpers.Tests
         {
             Assert.Equal(477, DateTimeHelpers.AgeMonths(new DateTime(1980, 8, 10, 13, 0, 0), new DateTime(2020, 5, 5)));
         }
+
+        [Theory]
+        [MemberData(nameof(GetLastDayOfPreviousWeekData))]
+        public void GetLastDayOfPreviousWeek_Valid(DateTime expected, DateTime dateTime)
+        {
+            Assert.Equal(expected, DateTimeHelpers.GetLastDayOfPreviousWeek(dateTime));
+        }
+
+        public static IEnumerable<object[]> GetLastDayOfPreviousWeekData =>
+            new List<object[]>
+            {
+                    new object[]{new DateTime(2019, 7, 28), new DateTime(2019, 8, 4)},
+                    new object[]{new DateTime(2019, 7, 28), new DateTime(2019, 8, 2)},
+            };
     }
 }
