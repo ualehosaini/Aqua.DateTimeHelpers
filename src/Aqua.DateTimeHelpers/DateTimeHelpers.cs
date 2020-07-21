@@ -525,6 +525,16 @@ namespace Aqua.DateTimeHelpers
             return GetFirstDayOfWeek(dateTime).AddDays(-1);
         }
 
+        /// <summary>
+        /// Checks if The DateTime is an PM DateTime value
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static bool IsDatePM(this DateTime dateTime)
+        {
+            return dateTime >= dateTime.Noon() && dateTime < dateTime.AddDays(1).Midnight();
+        }
+
 
 
     }

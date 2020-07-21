@@ -412,5 +412,14 @@ namespace Aqua.DateTimeHelpers.Tests
                     new object[]{new DateTime(2019, 7, 28), new DateTime(2019, 8, 4)},
                     new object[]{new DateTime(2019, 7, 28), new DateTime(2019, 8, 2)},
             };
+
+        [Fact]
+        public void IsDayPM_Valid()
+        {
+            Assert.False(new DateTime(2019, 12, 25, 1, 10, 50).IsDatePM());
+            Assert.True(new DateTime(2019, 12, 25, 15, 10, 50).IsDatePM());
+            Assert.False(new DateTime(2019, 12, 25, 10, 10, 55).IsDatePM());
+        }
+
     }
 }
