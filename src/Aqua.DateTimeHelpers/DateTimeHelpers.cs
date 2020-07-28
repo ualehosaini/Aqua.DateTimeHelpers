@@ -535,6 +535,20 @@ namespace Aqua.DateTimeHelpers
             return dateTime >= dateTime.Noon() && dateTime < dateTime.AddDays(1).Midnight();
         }
 
+        /// <summary>
+        /// Set a Year to a DateTime
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <param name="year"></param>
+        /// <returns></returns>
+        public static DateTime SetYear(this DateTime dateTime, int year)
+        {
+            if (!IsValidDate(year, dateTime.Month, dateTime.Day))
+                throw new ArgumentOutOfRangeException(nameof(dateTime));
+
+            return new DateTime(year, dateTime.Month, dateTime.Day, dateTime.Hour, dateTime.Minute, dateTime.Second)
+                ;
+        }
 
 
     }
