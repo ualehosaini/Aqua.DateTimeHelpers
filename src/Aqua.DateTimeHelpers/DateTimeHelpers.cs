@@ -550,6 +550,16 @@ namespace Aqua.DateTimeHelpers
                 ;
         }
 
+        /// <summary>
+        /// Return the Date of the same day of previous week
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static DateTime PreviousMonthSameDay(this DateTime dateTime)
+        {
+            return dateTime.AddMonths(-1);
+        }
+
 
     }
 }
