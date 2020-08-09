@@ -560,6 +560,20 @@ namespace Aqua.DateTimeHelpers
             return dateTime.AddMonths(-1);
         }
 
+        /// <summary>
+        /// Returns the age's exact number of years- calulatedfrom exact months
+        /// </summary>
+        /// <param name="referenceDate"></param>
+        /// <param name="today"></param>
+        /// <returns></returns>
+        public static decimal AgeExactYears(DateTime referenceDate, DateTime today)
+        {
+            if (referenceDate > today)
+                throw new ArgumentOutOfRangeException(nameof(referenceDate));
+
+            return Math.Round(((decimal)(today.Year * 12 + today.Month) - (referenceDate.Year * 12 + referenceDate.Month)) / 12, 2);
+        }
+
 
     }
 }
