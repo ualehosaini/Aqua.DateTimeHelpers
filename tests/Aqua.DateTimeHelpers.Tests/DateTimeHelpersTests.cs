@@ -442,5 +442,29 @@ namespace Aqua.DateTimeHelpers.Tests
         {
             Assert.Equal((decimal)39.75, DateTimeHelpers.AgeExactYears(new DateTime(1980, 8, 10, 13, 0, 0), new DateTime(2020, 5, 5)));
         }
+
+        [Theory]
+        [MemberData(nameof(GenerateBusinessDaysListData))]
+        public void GenerateBusinessDaysList_Valid(IEnumerable<DateTime> expected, DateTime fisrtDate, DateTime lastDate, List<DateTime> holidays, List<int> weekends)
+        {
+            Assert.Equal(expected, DateTimeHelpers.GenerateBusinessDaysList(fisrtDate, lastDate, holidays, weekends));
+        }
+
+        public static IEnumerable<object[]> GenerateBusinessDaysListData =>
+            new List<object[]>
+                {
+                    // DaysOfWeek Int Sunday = 0, Monday = 1 ... Saturday = 6
+                    new object[]{new List<DateTime> { new DateTime (2019, 1, 2) , new DateTime (2019, 1, 3) , new DateTime (2019, 1, 4)} ,
+                                 new DateTime (2019, 1, 2), new DateTime (2019, 1, 5),
+                                 new List<DateTime> { new DateTime (2019, 1, 1) , new DateTime (2019, 4, 19) , new DateTime (2019, 4, 22) , new DateTime (2019, 5, 6) , new DateTime(2019, 5, 27), new DateTime(2019, 8, 26), new DateTime(2019, 12, 25), new DateTime(2019, 12, 26) } ,
+                                 new List<int> {6,0}
+                    },
+                    new object[]{new List<DateTime> { new DateTime (2019, 5, 28) , new DateTime (2019, 5, 29) , new DateTime (2019, 5, 30) , new DateTime (2019, 5, 31)} ,
+                                 new DateTime (2019, 5, 27), new DateTime (2019, 6, 2),
+                                 new List<DateTime> { new DateTime (2019, 1, 1) , new DateTime (2019, 4, 19) , new DateTime (2019, 4, 22) , new DateTime (2019, 5, 6) , new DateTime(2019, 5, 27), new DateTime(2019, 8, 26), new DateTime(2019, 12, 25), new DateTime(2019, 12, 26) } ,
+                                 new List<int> {6,0}
+
+                    }
+                };
     }
 }

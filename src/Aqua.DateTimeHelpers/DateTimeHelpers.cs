@@ -574,6 +574,46 @@ namespace Aqua.DateTimeHelpers
             return Math.Round(((decimal)(today.Year * 12 + today.Month) - (referenceDate.Year * 12 + referenceDate.Month)) / 12, 2);
         }
 
+        /// <summary>
+        /// Generate a List of BusinessDays with considering 
+        /// Local Weekend Days Sequence (entered s list)
+        /// and national holidays (entered as list)
+        /// </summary>
+        /// <param name="fisrtDate"></param>
+        /// <param name="lastDate"></param>
+        /// <param name="holidays"></param>
+        /// <param name="weekends">Sunday = 0 .. Satuday = 6</param>
+        /// <returns></returns>
+        public static IEnumerable<DateTime> GenerateBusinessDaysList(DateTime fisrtDate, DateTime lastDate, List<DateTime> holidays, List<int> weekends)
+        {
+            if (fisrtDate > lastDate)
+                throw new ArgumentException("Incorrect last date " + lastDate);
 
+            List<DateTime> result = GenerateDateList(fisrtDate, lastDate);
+
+            foreach (int d in weekends)
+            {
+                for (int i = 0; i < result.Count; i++)
+                {
+                    if ((int)result[i].DayOfWeek == d)
+                    {
+                        result.RemoveAt(i);
+                    }
+                }
+            }
+
+            foreach (DateTime d in holidays)
+            {
+                for (int i = 0; i < result.Count; i++)
+                {
+                    if (result[i] == d)
+                    {
+                        result.RemoveAt(i);
+                    }
+                }
+            }
+
+            return result.OrderBy(d => d.Date);
+        }
     }
 }
