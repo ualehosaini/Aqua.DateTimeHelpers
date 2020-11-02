@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aqua.DateTimeHelpers", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aqua.DateTimeHelpers.Tests", "tests\Aqua.DateTimeHelpers.Tests\Aqua.DateTimeHelpers.Tests.csproj", "{44D4063B-3199-418D-BA58-63F0529196DF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{DE459EC5-D016-43C7-8743-A4E05C0370DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflow", "workflow", "{27D14E59-51B1-41D0-8913-EA8C9ECF0CD3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{C0CA9359-DA8C-4C7D-B8CA-EB9D9306C20D} = {032091C9-D941-40FB-A7EA-989DC013BD40}
 		{44D4063B-3199-418D-BA58-63F0529196DF} = {53CF0B62-009E-4092-83D0-410030EFD940}
+		{27D14E59-51B1-41D0-8913-EA8C9ECF0CD3} = {DE459EC5-D016-43C7-8743-A4E05C0370DF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2753340F-9747-4E29-900C-EEBC06263C44}

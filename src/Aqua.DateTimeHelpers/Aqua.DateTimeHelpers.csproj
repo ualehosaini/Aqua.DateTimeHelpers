@@ -2,6 +2,24 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>Is an Open Source and Free Software package for .NET to facilitate the work with Date and Time</Description>
+    <Authors>Useme Alehosaini</Authors>
+    <Company />
+    <PackageProjectUrl>https://ualehosaini.github.io/aqua-date-time-helpers.html</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ualehosaini/Aqua.DateTimeHelpers</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>date time datetime helpers .net</PackageTags>
+    <InludeSymbols>true</InludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <Version>1.0.0</Version>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
