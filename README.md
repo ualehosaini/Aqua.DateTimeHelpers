@@ -1,3 +1,4 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/l530thr4ji3vy5ka?svg=true)](https://ci.appveyor.com/project/ualehosaini/aqua-datetimehelpers)
 [![NuGet Version](https://img.shields.io/nuget/v/Aqua.DateTimeHelpers.svg)](https://www.nuget.org/packages/Aqua.DateTimeHelpers/)
 
 # About Aqua DateTime Helpers:
