@@ -615,5 +615,15 @@ namespace Aqua.DateTimeHelpers
 
             return result.OrderBy(d => d.Date);
         }
+
+        /// <summary>
+        /// Returns the DateTime.MaxValue
+        /// </summary>
+        /// <returns></returns>
+        public static DateTime GetMaxDate()
+        {
+            return DateTime.MaxValue;
+        }
+
     }
 }
