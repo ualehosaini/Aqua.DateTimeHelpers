@@ -234,8 +234,8 @@ namespace Aqua.DateTimeHelpers.Tests
         public static IEnumerable<object[]> GetFirstDayOfWeekData =>
             new List<object[]>
             {
-                    new object[]{new DateTime(2019, 7, 29), new DateTime(2019, 8, 4)},
-                    new object[]{new DateTime(2019, 7, 29), new DateTime(2019, 8, 2)},
+                    new object[]{new DateTime(2019, 4, 29), new DateTime(2019, 5, 4)},
+                    new object[]{new DateTime(2019, 4, 29), new DateTime(2019, 5, 2)},
             };
 
         [Fact]
@@ -280,8 +280,8 @@ namespace Aqua.DateTimeHelpers.Tests
         public static IEnumerable<object[]> GetLastDayOfWeekData =>
             new List<object[]>
             {
-                    new object[]{new DateTime(2019, 8, 4), new DateTime(2019, 8, 4)},
-                    new object[]{new DateTime(2019, 8, 4), new DateTime(2019, 8, 2)},
+                    new object[]{new DateTime(2019, 5, 5), new DateTime(2019, 5, 4)},
+                    new object[]{new DateTime(2019, 5, 5), new DateTime(2019, 5, 2)},
             };
 
         [Theory]
