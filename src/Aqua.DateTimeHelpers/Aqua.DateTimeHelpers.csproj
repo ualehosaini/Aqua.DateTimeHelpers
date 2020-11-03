@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.0</TargetFramework>
-    <Description>Is an Open Source and Free Software package to facilitate dealing with Date and Time, It supports all .NET Core versions as well as .NET Framework 4.6+</Description>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>Is an Open Source and Free Software package to facilitate dealing with Date and Time, It supports all .NET Core versions as well as .NET Framework 4.6.1+</Description>
     <Authors>Useme Alehosaini</Authors>
     <Company />
     <PackageProjectUrl>https://ualehosaini.github.io/aqua-date-time-helpers.html</PackageProjectUrl>
