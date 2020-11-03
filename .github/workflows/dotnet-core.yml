@@ -26,7 +26,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
-    - name: 'Pack project'
+    - name: 'Pack Project'
       run: dotnet pack --configuration Release
     - name: 'Push Package'
       run: dotnet nuget push 'src/Aqua.StringHelpers/bin/Release/*.nupkg' -k ${{ secrets.NUGET_AUTH_TOKEN }} -s ${{ env.NUGET_SOURCE_URL }}
