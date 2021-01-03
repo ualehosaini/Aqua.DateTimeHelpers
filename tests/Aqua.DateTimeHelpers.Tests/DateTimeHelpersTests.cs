@@ -155,10 +155,7 @@ namespace Aqua.DateTimeHelpers.Tests
 
         [Theory]
         [MemberData(nameof(GenerateDateListData))]
-        public void GenerateDateList_Valid(IEnumerable<DateTime> expected, DateTime fisrtDate, DateTime lastDate)
-        {
-            Assert.Equal(expected, DateTimeHelpers.GenerateDateList(fisrtDate, lastDate));
-        }
+        public void GenerateDateList_Valid(IEnumerable<DateTime> expected, DateTime fisrtDate, DateTime lastDate) => Assert.Equal(expected, DateTimeHelpers.GenerateDateList(fisrtDate, lastDate));
 
         public static IEnumerable<object[]> GenerateDateListData =>
             new List<object[]>
