@@ -144,10 +144,7 @@ namespace Aqua.DateTimeHelpers.Tests
 
         [Theory]
         [MemberData(nameof(GetLastWeekdayOfMonthData))]
-        public void GetLastWeekdayOfMonth_Valid(DateTime expected, int year, int month, DayOfWeek day)
-        {
-            Assert.Equal(expected, DateTimeHelpers.GetLastWeekdayOfMonth(year, month, day));
-        }
+        public void GetLastWeekdayOfMonth_Valid(DateTime expected, int year, int month, DayOfWeek day) => Assert.Equal(expected, DateTimeHelpers.GetLastWeekdayOfMonth(year, month, day));
 
         public static IEnumerable<object[]> GetLastWeekdayOfMonthData =>
             new List<object[]>
