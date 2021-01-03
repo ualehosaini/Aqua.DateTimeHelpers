@@ -365,10 +365,7 @@ namespace Aqua.DateTimeHelpers.Tests
         }
 
         [Fact]
-        public void AgeExactYears_Valid()
-        {
-            Assert.Equal((decimal)39.75, DateTimeHelpers.AgeExactYears(new DateTime(1980, 8, 10, 13, 0, 0), new DateTime(2020, 5, 5)));
-        }
+        public void AgeExactYears_Valid() => Assert.Equal((decimal)39.75, DateTimeHelpers.AgeExactYears(new DateTime(1980, 8, 10, 13, 0, 0), new DateTime(2020, 5, 5)));
 
         [Theory]
         [MemberData(nameof(GenerateBusinessDaysListData))]
