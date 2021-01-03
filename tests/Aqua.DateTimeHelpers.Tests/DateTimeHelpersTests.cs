@@ -369,10 +369,7 @@ namespace Aqua.DateTimeHelpers.Tests
 
         [Theory]
         [MemberData(nameof(GenerateBusinessDaysListData))]
-        public void GenerateBusinessDaysList_Valid(IEnumerable<DateTime> expected, DateTime fisrtDate, DateTime lastDate, List<DateTime> holidays, List<int> weekends)
-        {
-            Assert.Equal(expected, DateTimeHelpers.GenerateBusinessDaysList(fisrtDate, lastDate, holidays, weekends));
-        }
+        public void GenerateBusinessDaysList_Valid(IEnumerable<DateTime> expected, DateTime fisrtDate, DateTime lastDate, List<DateTime> holidays, List<int> weekends) => Assert.Equal(expected, DateTimeHelpers.GenerateBusinessDaysList(fisrtDate, lastDate, holidays, weekends));
 
         public static IEnumerable<object[]> GenerateBusinessDaysListData =>
             new List<object[]>
