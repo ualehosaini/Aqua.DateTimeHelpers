@@ -98,10 +98,7 @@ namespace Aqua.DateTimeHelpers.Tests
         public void IgnoreMinutes_Valid() => Assert.Equal(new DateTime(9999, 12, 31, 23, 0, 0), DateTime.MaxValue.IgnoreMinutes());
 
         [Fact]
-        public void IgnoreHours_Valid()
-        {
-            Assert.Equal(new DateTime(9999, 12, 31, 0, 0, 0), DateTime.MaxValue.IgnoreHours());
-        }
+        public void IgnoreHours_Valid() => Assert.Equal(new DateTime(9999, 12, 31, 0, 0, 0), DateTime.MaxValue.IgnoreHours());
 
         [Theory]
         [InlineData(true, 2019, 2, 10)]
