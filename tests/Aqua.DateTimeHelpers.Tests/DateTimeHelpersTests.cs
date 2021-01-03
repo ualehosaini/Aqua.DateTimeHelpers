@@ -77,10 +77,7 @@ namespace Aqua.DateTimeHelpers.Tests
                 };
 
         [Fact]
-        public void GetMinDate_Valid()
-        {
-            Assert.Equal(new DateTime(0001, 1, 1), DateTimeHelpers.GetMinDate());
-        }
+        public void GetMinDate_Valid() => Assert.Equal(new DateTime(0001, 1, 1), DateTimeHelpers.GetMinDate());
 
         [Fact]
         public void IgnoreTimeSpan_Valid()
