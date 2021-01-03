@@ -327,10 +327,7 @@ namespace Aqua.DateTimeHelpers.Tests
         }
 
         [Fact]
-        public void AgeMonths_Valid()
-        {
-            Assert.Equal(477, DateTimeHelpers.AgeMonths(new DateTime(1980, 8, 10, 13, 0, 0), new DateTime(2020, 5, 5)));
-        }
+        public void AgeMonths_Valid() => Assert.Equal(477, DateTimeHelpers.AgeMonths(new DateTime(1980, 8, 10, 13, 0, 0), new DateTime(2020, 5, 5)));
 
         [Theory(Skip = "culture difference")]
         [MemberData(nameof(GetLastDayOfPreviousWeekData))]
