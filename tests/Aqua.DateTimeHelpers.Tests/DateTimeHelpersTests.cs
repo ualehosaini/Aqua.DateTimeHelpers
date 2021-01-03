@@ -60,7 +60,6 @@ namespace Aqua.DateTimeHelpers.Tests
             DateTime expected = new DateTime(y, m, d, h, mnt, s, DateTimeKind.Utc);
 
             Assert.Equal(expected, DateTimeHelpers.UnixTimeStampToDateTimeUTC(input));
-
         }
 
         [Theory]
