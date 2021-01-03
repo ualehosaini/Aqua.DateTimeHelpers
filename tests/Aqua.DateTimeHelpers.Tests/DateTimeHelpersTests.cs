@@ -331,10 +331,7 @@ namespace Aqua.DateTimeHelpers.Tests
 
         [Theory(Skip = "culture difference")]
         [MemberData(nameof(GetLastDayOfPreviousWeekData))]
-        public void GetLastDayOfPreviousWeek_Valid(DateTime expected, DateTime dateTime)
-        {
-            Assert.Equal(expected, DateTimeHelpers.GetLastDayOfPreviousWeek(dateTime));
-        }
+        public void GetLastDayOfPreviousWeek_Valid(DateTime expected, DateTime dateTime) => Assert.Equal(expected, DateTimeHelpers.GetLastDayOfPreviousWeek(dateTime));
 
         public static IEnumerable<object[]> GetLastDayOfPreviousWeekData =>
             new List<object[]>
