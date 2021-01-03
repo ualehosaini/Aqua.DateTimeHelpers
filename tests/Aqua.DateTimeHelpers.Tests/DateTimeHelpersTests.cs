@@ -198,10 +198,7 @@ namespace Aqua.DateTimeHelpers.Tests
         }
 
         [Fact]
-        public void AgeYears_Valid()
-        {
-            Assert.Equal(40, DateTimeHelpers.AgeCalenderYears(new DateTime(1980, 8, 10, 13, 0, 0), new DateTime(2020, 5, 5)));
-        }
+        public void AgeYears_Valid() => Assert.Equal(40, DateTimeHelpers.AgeCalenderYears(new DateTime(1980, 8, 10, 13, 0, 0), new DateTime(2020, 5, 5)));
 
         [Fact]
         public void SetTime_Valid()
