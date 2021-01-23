@@ -372,11 +372,12 @@ namespace Aqua.DateTimeHelpers.Tests
         public void AgeExactYears_Valid() => Assert.Equal((decimal)39.75, DateTimeHelpers.AgeExactYears(new DateTime(1980, 8, 10, 13, 0, 0), new DateTime(2020, 5, 5)));
 
         [Theory]
-        [MemberData(nameof(GenerateBusinessDaysListData))]
+        [MemberData(nameof(GetGenerateBusinessDaysListData()))]
         public void GenerateBusinessDaysList_Valid(IEnumerable<DateTime> expected, DateTime fisrtDate, DateTime lastDate, List<DateTime> holidays, List<int> weekends) => Assert.Equal(expected, DateTimeHelpers.GenerateBusinessDaysList(fisrtDate, lastDate, holidays, weekends));
 
-        public static IEnumerable<object[]> GenerateBusinessDaysListData =>
-            new List<object[]>
+        public static IEnumerable<object[]> GetGenerateBusinessDaysListData()
+        {
+            return new List<object[]>
                 {
                     // DaysOfWeek Int Sunday = 0, Monday = 1 ... Saturday = 6
                     new object[]{new List<DateTime> { new DateTime (2019, 1, 2) , new DateTime (2019, 1, 3) , new DateTime (2019, 1, 4)} ,
@@ -391,6 +392,7 @@ namespace Aqua.DateTimeHelpers.Tests
 
                     }
                 };
+        }
 
         [Fact]
         public void GetMaxDate_Valid() => Assert.Equal((new DateTime(9999, 12, 31, 23, 59, 59)).IgnoreMilliseconds(), DateTimeHelpers.GetMaxDate().IgnoreMilliseconds());
