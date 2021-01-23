@@ -156,11 +156,12 @@ namespace Aqua.DateTimeHelpers.Tests
             };
 
         [Theory]
-        [MemberData(nameof(GenerateDateListData))]
+        [MemberData(nameof(GetGenerateDateListData()))]
         public void GenerateDateList_Valid(IEnumerable<DateTime> expected, DateTime fisrtDate, DateTime lastDate) => Assert.Equal(expected, DateTimeHelpers.GenerateDateList(fisrtDate, lastDate));
 
-        public static IEnumerable<object[]> GenerateDateListData =>
-            new List<object[]>
+        public static IEnumerable<object[]> GetGenerateDateListData()
+        {
+            return new List<object[]>
                 {
                     // DaysOfWeek Int Sunday = 0, Monday = 1 ... Saturday = 6
                     new object[]{new List<DateTime> { new DateTime (2019, 1, 2) , new DateTime (2019, 1, 3) , new DateTime (2019, 1, 4), new DateTime(2019, 1, 5) } ,
@@ -170,6 +171,7 @@ namespace Aqua.DateTimeHelpers.Tests
                                  new DateTime (2019, 5, 27), new DateTime (2019, 6, 2),
                     }
                 };
+        }
 
         [Theory(Skip = "culture difference")]
         [MemberData(nameof(GetFirstDayOfWeekData))]
