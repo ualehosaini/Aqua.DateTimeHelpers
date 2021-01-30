@@ -232,7 +232,7 @@ namespace Aqua.DateTimeHelpers.Tests
         [Theory(Skip = "culture difference")]
         [MemberData(nameof(GetFirstDayOfWeekData))]
         public void GetFirstDayOfWeek_Valid(DateTime expected,
-                                            DateTime dateTime) => Assert.Equal(expected, DateTimeHelpers.GetFirstDayOfWeek(dateTime));
+            DateTime dateTime) => Assert.Equal(expected, DateTimeHelpers.GetFirstDayOfWeek(dateTime));
 
         public static IEnumerable<object[]> GetFirstDayOfWeekData =>
             new List<object[]>
