@@ -368,9 +368,9 @@ namespace Aqua.DateTimeHelpers.Tests
         [Theory]
         [MemberData(nameof(GetFirstWeekdayOfMonthData))]
         public void GetFirstWeekdayOfMonth_Valid(DateTime expected,
-                                                 int year,
-                                                 int month,
-                                                 DayOfWeek day) => Assert.Equal(expected, DateTimeHelpers.GetFirstWeekdayOfMonth(year, month, day));
+            int year,
+            int month,
+            DayOfWeek day) => Assert.Equal(expected, DateTimeHelpers.GetFirstWeekdayOfMonth(year, month, day));
 
         public static IEnumerable<object[]> GetFirstWeekdayOfMonthData =>
             new List<object[]>
