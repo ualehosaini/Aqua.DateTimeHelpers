@@ -97,7 +97,10 @@ namespace Aqua.DateTimeHelpers.Tests
 
         [Theory]
         [MemberData(nameof(GetIsBetweenData()))]
-        public void IsBetween_Valid(bool expected, DateTime input, DateTime rangeBegining, DateTime rangeEnd) => Assert.Equal(expected, input.IsBetween(rangeBegining, rangeEnd));
+        public void IsBetween_Valid(bool expected,
+                                    DateTime input,
+                                    DateTime rangeBegining,
+                                    DateTime rangeEnd) => Assert.Equal(expected, input.IsBetween(rangeBegining, rangeEnd));
 
         public static IEnumerable<object[]> GetIsBetweenData()
         {
