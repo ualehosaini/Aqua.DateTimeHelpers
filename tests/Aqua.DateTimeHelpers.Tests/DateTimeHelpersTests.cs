@@ -82,7 +82,13 @@ namespace Aqua.DateTimeHelpers.Tests
         [InlineData(86399, 1970, 1, 1, 23, 59, 59)]
         [InlineData(1444471810, 2015, 10, 10, 10, 10, 10)]
         [InlineData(1433592775, 2015, 6, 6, 12, 12, 55)]
-        public void DateTimeToUnixTimeStamp_Valid(long expected, int y, int m, int d, int h, int mnt, int s)
+        public void DateTimeToUnixTimeStamp_Valid(long expected,
+                                                  int y,
+                                                  int m,
+                                                  int d,
+                                                  int h,
+                                                  int mnt,
+                                                  int s)
         {
             DateTime value = new DateTime(y, m, d, h, mnt, s, DateTimeKind.Utc);
 
