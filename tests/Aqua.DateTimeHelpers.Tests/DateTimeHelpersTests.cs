@@ -148,7 +148,10 @@ namespace Aqua.DateTimeHelpers.Tests
         [InlineData(false, 2019, 2, 10)]
         [InlineData(false, 2017, 10, 15)]
         [InlineData(true, 2019, 8, 12)]
-        public void IsMonday_Valid(bool expected, int year, int month, int day) => Assert.Equal(expected, DateTimeHelpers.IsMonday(new DateTime(year, month, day)));
+        public void IsMonday_Valid(bool expected,
+                                   int year,
+                                   int month,
+                                   int day) => Assert.Equal(expected, DateTimeHelpers.IsMonday(new DateTime(year, month, day)));
 
         [Theory]
         [InlineData(false, 2019, 2, 10)]
