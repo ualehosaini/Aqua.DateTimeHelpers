@@ -65,12 +65,12 @@ namespace Aqua.DateTimeHelpers.Tests
         [InlineData(1444471810, 2015, 10, 10, 10, 10, 10)]
         [InlineData(1433592775, 2015, 6, 6, 12, 12, 55)]
         public void UnixTimeStampToDateTimeUTC_Valid(long input,
-                                                     int y,
-                                                     int m,
-                                                     int d,
-                                                     int h,
-                                                     int mnt,
-                                                     int s)
+            int y,
+            int m,
+            int d,
+            int h,
+            int mnt,
+            int s)
         {
             DateTime expected = new DateTime(y, m, d, h, mnt, s, DateTimeKind.Utc);
 
