@@ -283,7 +283,8 @@ namespace Aqua.DateTimeHelpers.Tests
 
         [Theory(Skip = "culture difference")]
         [MemberData(nameof(GetFirstDayOfNextWeekData))]
-        public void GetFirstDayOfNextWeek_Valid(DateTime expected, DateTime dateTime) => Assert.Equal(expected, DateTimeHelpers.GetFirstDayOfNextWeek(dateTime));
+        public void GetFirstDayOfNextWeek_Valid(DateTime expected,
+                                                DateTime dateTime) => Assert.Equal(expected, DateTimeHelpers.GetFirstDayOfNextWeek(dateTime));
 
         public static IEnumerable<object[]> GetFirstDayOfNextWeekData =>
             new List<object[]>
