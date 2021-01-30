@@ -11,9 +11,9 @@ namespace Aqua.DateTimeHelpers.Tests
         [InlineData(false, 2017, 10, 35)]
         [InlineData(false, 2017, 13, 1)]
         public void IsValidDate_Valid(bool expected,
-                                      int year,
-                                      int month,
-                                      int day) => Assert.Equal(expected, DateTimeHelpers.IsValidDate(year, month, day));
+            int year,
+            int month,
+            int day) => Assert.Equal(expected, DateTimeHelpers.IsValidDate(year, month, day));
 
         [Theory]
         [InlineData(true, 23, 30)]
