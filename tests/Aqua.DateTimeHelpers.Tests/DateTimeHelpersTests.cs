@@ -32,7 +32,13 @@ namespace Aqua.DateTimeHelpers.Tests
         [InlineData(false, 2017, 1, 1, 22, 30, 65)]
         [InlineData(false, 2017, 10, 35, 10, 10, 10)]
         [InlineData(false, 2017, 13, 1, 25, 25, 10)]
-        public void IsValidDateTime_Valid(bool expected, int year, int month, int day, int hour, int minute, int second = 0) => Assert.Equal(expected, DateTimeHelpers.IsValidDateTime(year, month, day, hour, minute, second));
+        public void IsValidDateTime_Valid(bool expected,
+                                          int year,
+                                          int month,
+                                          int day,
+                                          int hour,
+                                          int minute,
+                                          int second = 0) => Assert.Equal(expected, DateTimeHelpers.IsValidDateTime(year, month, day, hour, minute, second));
 
         [Theory]
         [InlineData(0, 1970, 1, 1, 0, 0, 0)]
