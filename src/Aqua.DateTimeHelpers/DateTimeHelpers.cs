@@ -309,10 +309,7 @@ namespace Aqua.DateTimeHelpers
         /// </summary>
         /// <param name="dateTime"></param>
         /// <returns></returns>
-        public static DateTime NextMonthSameDay(this DateTime dateTime)
-        {
-            return dateTime.AddMonths(1);
-        }
+        public static DateTime NextMonthSameDay(this DateTime dateTime) => dateTime.AddMonths(1);
 
         /// <summary>
         /// Set a Day to a DateTime
