@@ -179,10 +179,7 @@ namespace Aqua.DateTimeHelpers
         /// </summary>
         /// <param name="dateTime"></param>
         /// <returns></returns>
-        public static bool IsSaturday(this DateTime dateTime)
-        {
-            return dateTime.DayOfWeek == DayOfWeek.Saturday;
-        }
+        public static bool IsSaturday(this DateTime dateTime) => dateTime.DayOfWeek == DayOfWeek.Saturday;
 
         /// <summary>
         /// Last WeekDay in a Year / Month
