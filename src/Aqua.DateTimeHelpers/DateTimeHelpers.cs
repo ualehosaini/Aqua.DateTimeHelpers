@@ -130,10 +130,7 @@ namespace Aqua.DateTimeHelpers
         /// </summary>
         /// <param name="dateTime"></param>
         /// <returns></returns>
-        public static DateTime IgnoreHours(this DateTime dateTime)
-        {
-            return dateTime.IgnoreTimeSpan(TimeSpan.FromHours(24));
-        }
+        public static DateTime IgnoreHours(this DateTime dateTime) => dateTime.IgnoreTimeSpan(TimeSpan.FromHours(24));
 
         /// <summary>
         /// Is The Date is Sunday?
