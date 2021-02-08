@@ -259,10 +259,7 @@ namespace Aqua.DateTimeHelpers
         /// </summary>
         /// <param name="dateTime"></param>
         /// <returns></returns>
-        public static DateTime Midnight(this DateTime dateTime)
-        {
-            return dateTime.Date;
-        }
+        public static DateTime Midnight(this DateTime dateTime) => dateTime.Date;
 
         /// <summary>
         /// Returns the age in years
