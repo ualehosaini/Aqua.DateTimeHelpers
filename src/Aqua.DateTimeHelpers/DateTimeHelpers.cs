@@ -49,11 +49,8 @@ namespace Aqua.DateTimeHelpers
         /// <param name="minute"></param>
         /// <param name="second"></param>
         /// <returns></returns>
-        public static bool IsValidDateTime(int year, int month, int day, int hour, int minute, int second = 0)
-        {
-            return IsValidDate(year, month, day) &&
+        public static bool IsValidDateTime(int year, int month, int day, int hour, int minute, int second = 0) => IsValidDate(year, month, day) &&
                    IsValidTime(hour, minute, second);
-        }
 
         /// <summary>
         /// To Convert Unix 
