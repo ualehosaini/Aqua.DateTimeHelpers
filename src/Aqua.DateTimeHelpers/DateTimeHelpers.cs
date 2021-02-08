@@ -353,10 +353,7 @@ namespace Aqua.DateTimeHelpers
         /// </summary>
         /// <param name="dateTime"></param>
         /// <returns></returns>
-        public static DateTime NextWeekSameDay(this DateTime dateTime)
-        {
-            return dateTime.AddDays(7);
-        }
+        public static DateTime NextWeekSameDay(this DateTime dateTime) => dateTime.AddDays(7);
 
         /// <summary>
         /// Return the Year's week number of specific date
