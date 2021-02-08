@@ -339,10 +339,7 @@ namespace Aqua.DateTimeHelpers
         /// </summary>
         /// <param name="dateTime"></param>
         /// <returns></returns>
-        public static DateTime Noon(this DateTime dateTime)
-        {
-            return dateTime.SetTime(12, 0, 0);
-        }
+        public static DateTime Noon(this DateTime dateTime) => dateTime.SetTime(12, 0, 0);
 
         /// <summary>
         /// Checks if The DateTime is an AM DateTime value
