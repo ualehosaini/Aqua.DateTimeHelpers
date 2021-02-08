@@ -388,10 +388,7 @@ namespace Aqua.DateTimeHelpers
         /// </summary>
         /// <param name="dateTime"></param>
         /// <returns></returns>
-        public static DateTime PreviousWeekSameDay(this DateTime dateTime)
-        {
-            return dateTime.AddDays(-7);
-        }
+        public static DateTime PreviousWeekSameDay(this DateTime dateTime) => dateTime.AddDays(-7);
 
         /// <summary>
         /// First WeekDay in a Year / Month
