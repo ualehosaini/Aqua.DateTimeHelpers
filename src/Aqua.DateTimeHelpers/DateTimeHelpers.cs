@@ -88,10 +88,7 @@ namespace Aqua.DateTimeHelpers
         /// Returns the DateTime.MinValue
         /// </summary>
         /// <returns></returns>
-        public static DateTime GetMinDate()
-        {
-            return DateTime.MinValue;
-        }
+        public static DateTime GetMinDate() => DateTime.MinValue;
 
         /// <summary>
         /// Ignore Specific DateTime Part
