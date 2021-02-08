@@ -302,10 +302,7 @@ namespace Aqua.DateTimeHelpers
         /// </summary>
         /// <param name="dateTime"></param>
         /// <returns></returns>
-        public static DateTime GetFirstDayOfNextWeek(DateTime dateTime)
-        {
-            return GetFirstDayOfWeek(dateTime).AddDays(7);
-        }
+        public static DateTime GetFirstDayOfNextWeek(DateTime dateTime) => GetFirstDayOfWeek(dateTime).AddDays(7);
 
         /// <summary>
         /// Return the Date of the same day of next month
