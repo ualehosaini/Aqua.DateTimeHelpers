@@ -109,10 +109,7 @@ namespace Aqua.DateTimeHelpers
         /// </summary>
         /// <param name="dateTime"></param>
         /// <returns></returns>
-        public static DateTime IgnoreMilliseconds(this DateTime dateTime)
-        {
-            return dateTime.IgnoreTimeSpan(TimeSpan.FromMilliseconds(1000));
-        }
+        public static DateTime IgnoreMilliseconds(this DateTime dateTime) => dateTime.IgnoreTimeSpan(TimeSpan.FromMilliseconds(1000));
 
         /// <summary>
         /// Ignore the Seconds Part
