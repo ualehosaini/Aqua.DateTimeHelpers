@@ -522,10 +522,7 @@ namespace Aqua.DateTimeHelpers
         /// Returns the DateTime.MaxValue
         /// </summary>
         /// <returns></returns>
-        public static DateTime GetMaxDate()
-        {
-            return DateTime.MaxValue;
-        }
+        public static DateTime GetMaxDate() => DateTime.MaxValue;
 
     }
 }
