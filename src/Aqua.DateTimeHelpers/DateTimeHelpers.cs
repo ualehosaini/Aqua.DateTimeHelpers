@@ -409,10 +409,7 @@ namespace Aqua.DateTimeHelpers
         /// </summary>
         /// <param name="dateTime"></param>
         /// <returns></returns>
-        public static DateTime PreviousYearSameDay(this DateTime dateTime)
-        {
-            return dateTime.AddYears(-1);
-        }
+        public static DateTime PreviousYearSameDay(this DateTime dateTime) => dateTime.AddYears(-1);
 
 
         /// <summary>
