@@ -123,10 +123,7 @@ namespace Aqua.DateTimeHelpers
         /// </summary>
         /// <param name="dateTime"></param>
         /// <returns></returns>
-        public static DateTime IgnoreMinutes(this DateTime dateTime)
-        {
-            return dateTime.IgnoreTimeSpan(TimeSpan.FromMinutes(60));
-        }
+        public static DateTime IgnoreMinutes(this DateTime dateTime) => dateTime.IgnoreTimeSpan(TimeSpan.FromMinutes(60));
 
         /// <summary>
         /// Ignore the Hours Part
