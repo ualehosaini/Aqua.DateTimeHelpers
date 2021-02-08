@@ -460,10 +460,7 @@ namespace Aqua.DateTimeHelpers
         /// </summary>
         /// <param name="dateTime"></param>
         /// <returns></returns>
-        public static DateTime PreviousMonthSameDay(this DateTime dateTime)
-        {
-            return dateTime.AddMonths(-1);
-        }
+        public static DateTime PreviousMonthSameDay(this DateTime dateTime) => dateTime.AddMonths(-1);
 
         /// <summary>
         /// Returns the age's exact number of years- calulatedfrom exact months
