@@ -81,11 +81,8 @@ namespace Aqua.DateTimeHelpers
         /// <param name="rangeBegining"></param>
         /// <param name="rangeEnd"></param>
         /// <returns></returns>
-        public static bool IsBetween(this DateTime input, DateTime rangeBegining, DateTime rangeEnd)
-        {
-            return input.Ticks >= rangeBegining.Ticks &&
+        public static bool IsBetween(this DateTime input, DateTime rangeBegining, DateTime rangeEnd) => input.Ticks >= rangeBegining.Ticks &&
                    input.Ticks < rangeEnd.Ticks;
-        }
 
         /// <summary>
         /// Returns the DateTime.MinValue
