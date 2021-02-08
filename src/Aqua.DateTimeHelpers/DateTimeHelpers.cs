@@ -438,10 +438,7 @@ namespace Aqua.DateTimeHelpers
         /// </summary>
         /// <param name="dateTime"></param>
         /// <returns></returns>
-        public static bool IsDatePM(this DateTime dateTime)
-        {
-            return dateTime >= dateTime.Noon() && dateTime < dateTime.AddDays(1).Midnight();
-        }
+        public static bool IsDatePM(this DateTime dateTime) => dateTime >= dateTime.Noon() && dateTime < dateTime.AddDays(1).Midnight();
 
         /// <summary>
         /// Set a Year to a DateTime
