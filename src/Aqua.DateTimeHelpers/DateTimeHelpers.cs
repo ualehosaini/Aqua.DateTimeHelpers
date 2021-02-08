@@ -72,10 +72,7 @@ namespace Aqua.DateTimeHelpers
         /// </summary>
         /// <param name="dateTime"></param>
         /// <returns></returns>
-        public static double DateTimeToUnixTimeStamp(DateTime dateTime)
-        {
-            return (dateTime.ToUniversalTime().Ticks - _epochTicks) / TimeSpan.TicksPerSecond;
-        }
+        public static double DateTimeToUnixTimeStamp(DateTime dateTime) => (dateTime.ToUniversalTime().Ticks - _epochTicks) / TimeSpan.TicksPerSecond;
 
         /// <summary>
         /// Check the input if it is within a range of DateTime
