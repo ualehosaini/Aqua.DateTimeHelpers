@@ -165,10 +165,7 @@ namespace Aqua.DateTimeHelpers
         /// </summary>
         /// <param name="dateTime"></param>
         /// <returns></returns>
-        public static bool IsThursday(this DateTime dateTime)
-        {
-            return dateTime.DayOfWeek == DayOfWeek.Thursday;
-        }
+        public static bool IsThursday(this DateTime dateTime) => dateTime.DayOfWeek == DayOfWeek.Thursday;
 
         /// <summary>
         /// Is The Date is Friday?
