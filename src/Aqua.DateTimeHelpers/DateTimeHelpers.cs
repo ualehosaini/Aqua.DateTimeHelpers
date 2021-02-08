@@ -58,10 +58,7 @@ namespace Aqua.DateTimeHelpers
         /// </summary>
         /// <param name="unixTimeStamp"></param>
         /// <returns></returns>
-        public static DateTime UnixTimeStampToDateTime(double unixTimeStamp)
-        {
-            return new DateTime(_epochDateTime.AddSeconds(unixTimeStamp).ToLocalTime().Ticks);
-        }
+        public static DateTime UnixTimeStampToDateTime(double unixTimeStamp) => new DateTime(_epochDateTime.AddSeconds(unixTimeStamp).ToLocalTime().Ticks);
 
         /// <summary>
         /// To Convert Unix Time Stamp To DateTimeUTC
