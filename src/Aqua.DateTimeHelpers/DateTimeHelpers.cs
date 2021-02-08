@@ -346,10 +346,7 @@ namespace Aqua.DateTimeHelpers
         /// </summary>
         /// <param name="dateTime"></param>
         /// <returns></returns>
-        public static bool IsDateAM(this DateTime dateTime)
-        {
-            return dateTime >= dateTime.Midnight() && dateTime < dateTime.Noon();
-        }
+        public static bool IsDateAM(this DateTime dateTime) => dateTime >= dateTime.Midnight() && dateTime < dateTime.Noon();
 
         /// <summary>
         /// Return the Date of the same day of next week
