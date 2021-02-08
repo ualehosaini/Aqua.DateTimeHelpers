@@ -96,13 +96,13 @@ namespace Aqua.DateTimeHelpers.Tests
         }
 
         [Theory]
-        [MemberData(nameof(GetIsBetweenData()))]
+        [MemberData(nameof(IsBetweenData()))]
         public void IsBetween_Valid(bool expected,
             DateTime input,
             DateTime rangeBegining,
             DateTime rangeEnd) => Assert.Equal(expected, input.IsBetween(rangeBegining, rangeEnd));
 
-        public static IEnumerable<object[]> GetIsBetweenData()
+        public static IEnumerable<object[]> IsBetweenData()
         {
             return new List<object[]>
                 {
@@ -430,10 +430,13 @@ namespace Aqua.DateTimeHelpers.Tests
         public void AgeExactYears_Valid() => Assert.Equal((decimal)39.75, DateTimeHelpers.AgeExactYears(new DateTime(1980, 8, 10, 13, 0, 0), new DateTime(2020, 5, 5)));
 
         [Theory]
-        [MemberData(nameof(GetGenerateBusinessDaysListData()))]
-        public void GenerateBusinessDaysList_Valid(IEnumerable<DateTime> expected, DateTime fisrtDate, DateTime lastDate, List<DateTime> holidays, List<int> weekends) => Assert.Equal(expected, DateTimeHelpers.GenerateBusinessDaysList(fisrtDate, lastDate, holidays, weekends));
+        [MemberData(nameof(GenerateBusinessDaysListData))]
+        public void GenerateBusinessDaysList_Valid(IEnumerable<DateTime> expected, DateTime fisrtDate, DateTime lastDate, List<DateTime> holidays, List<int> weekends)
+        {
+            Assert.Equal(expected, DateTimeHelpers.GenerateBusinessDaysList(fisrtDate, lastDate, holidays, weekends));
+        }
 
-        public static IEnumerable<object[]> GetGenerateBusinessDaysListData()
+        public static IEnumerable<object[]> GenerateBusinessDaysListData()
         {
             return new List<object[]>
                 {
