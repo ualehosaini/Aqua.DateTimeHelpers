@@ -18,16 +18,12 @@ namespace Aqua.DateTimeHelpers
         /// <param name="month"></param>
         /// <param name="day"></param>
         /// <returns></returns>
-        public static bool IsValidDate(int year, int month, int day)
-        {
-            return
-                year >= DateTime.MinValue.Year &&
+        public static bool IsValidDate(int year, int month, int day) => year >= DateTime.MinValue.Year &&
                 year <= DateTime.MaxValue.Year &&
                 month >= 1 &&
                 month <= 12 &&
                 day >= 1 &&
                 DateTime.DaysInMonth(year, month) >= day;
-        }
 
         /// <summary>
         /// Check the combination of Hour, Minute, and Second is a Valid Time
