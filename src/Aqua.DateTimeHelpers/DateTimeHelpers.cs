@@ -431,10 +431,7 @@ namespace Aqua.DateTimeHelpers
         /// </summary>
         /// <param name="dateTime"></param>
         /// <returns></returns>
-        public static DateTime GetLastDayOfPreviousWeek(DateTime dateTime)
-        {
-            return GetFirstDayOfWeek(dateTime).AddDays(-1);
-        }
+        public static DateTime GetLastDayOfPreviousWeek(DateTime dateTime) => GetFirstDayOfWeek(dateTime).AddDays(-1);
 
         /// <summary>
         /// Checks if The DateTime is an PM DateTime value
